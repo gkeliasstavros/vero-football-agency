@@ -224,4 +224,15 @@ html{scroll-padding-top:105px}
 .profile-source{display:inline-flex;justify-content:space-between;align-items:center;gap:45px;border-bottom:1px solid var(--ink);padding:14px 0;font-size:11px;font-weight:700;letter-spacing:.14em}
 .profile-source span{font-size:20px;color:#947747}
 .profile-back{padding:45px 0;font-size:11px;font-weight:700;letter-spacing:.16em}
+.talent-card-photo{display:block;height:320px;margin:-28px -32px 24px;overflow:hidden;background:#272724}
+.talent-card-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 28%;transition:transform .35s}
+.talent-card:hover .talent-card-photo img,.talent-card:focus-visible .talent-card-photo img{transform:scale(1.035)}
+.talent-card-photo--maria img{object-position:50% 24%}
+.talent-card-photo--katrin img{object-position:50% 22%}
+.talent-card-photo--grigoria img{object-position:57% 22%}
+.talent-card-photo--anna img{object-position:76% 35%}
+.profile-photo{margin:0;background:#171716;max-height:740px;overflow:hidden}
+.profile-photo img{display:block;width:100%;max-height:740px;object-fit:contain}
+.profile-photo figcaption{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;overflow:hidden}
 @media(max-width:760px){.talent-section{padding:75px 0 85px}.talent-intro{display:block;margin-bottom:42px}.talent-intro h2{font-size:clamp(58px,12vw,85px)}.talent-intro p{font-size:14px;margin-top:25px}.talent-grid{grid-template-columns:1fr}.talent-card{min-height:285px;padding:24px}.talent-card-name{font-size:clamp(56px,13vw,85px)}.profile-hero{min-height:590px}.profile-hero-inner{padding:150px 0 62px}.profile-hero h1{font-size:clamp(62px,14vw,100px);margin-bottom:70px}.profile-hero-foot{display:block;font-size:9px;line-height:2}.profile-hero-foot span{display:block}.profile-layout{display:block}.profile-story{margin-top:55px}.profile-story h2{font-size:clamp(62px,13vw,85px)}.profile-story p{font-size:15px}}
+@media(max-width:760px){.talent-card-photo{height:275px;margin:-24px -24px 22px}.profile-photo img{max-height:520px}}
