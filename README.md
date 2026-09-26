@@ -17,11 +17,11 @@ VERO applies the useful patterns in its own voice and visual identity. The site 
 ## Content review before publishing
 
 - The supplied VERO artwork and real football photos are used on the homepage. The image gallery has no player names until the identities and a public roster have been verified. Do not generate or alter identity-defining features.
-- `verofootballagency@gmail.com` was confirmed as the public email. Check that a real test enquiry arrives, including Spam. PHP `mail()` may accept messages that are subsequently filtered. For reliable sending, set up an authenticated sender mailbox and SMTP on Hostinger, then replace the `mail()` call in `contact.php`.
-- Confirm the responsible business's legal name, postal address, email provider and email-retention practice, then review `privacy.html` before calling the privacy information final. The current page describes the contact flow but cannot supply unprovided legal identity details.
+- `verofootballagency@gmail.com` is the confirmed public email. Test enquiries submitted both on the temporary site and `verofootball.com` arrived in that inbox on 26 September 2026. PHP `mail()` can still accept messages that are subsequently filtered. For stronger long-term delivery, use authenticated SMTP with a configured sender mailbox.
+- VERO is operated by a company registered in Bulgaria with business correspondence address Boulevard Vitosha 63, Sofia, Bulgaria. Website enquiry correspondence is retained for one year after the last message; no analytics are used. The company's exact registered legal name has not yet been supplied and must be added to `privacy.html` before calling the controller identification complete.
 - Confirm any player names, current affiliations and permission to show them publicly before adding a named roster. Two supplied photos with visible phone UI were excluded.
-- Confirm the final copy, legal identity and privacy notice with the agency before attaching the official domain.
-- Review the design on phone and desktop, then connect the official domain when ready.
+- Confirm final copy and the company's exact legal identity with the agency.
+- Review the design on phone and desktop.
 
 ## Deployment verification
 
@@ -29,6 +29,6 @@ Hostinger's live page was observed with a newer HTML file and an older cached `s
 
 ## Hostinger deployment
 
-This repository is connected to the Hostinger temporary site `navajowhite-fox-356039.hostingersite.com`; branch `main` deploys to `public_html`. If the next GitHub commit is not reflected on the site, redeploy from the Hostinger Git dashboard. The official domain is not yet attached.
+This repository is connected to Hostinger; branch `main` deploys to `public_html`. The official domain `verofootball.com` and `www.verofootball.com` both served the current site over HTTPS on 26 September 2026. If the next GitHub commit is not reflected on the site, redeploy from the Hostinger Git dashboard.
 
 No build command, Node.js server, database, or environment variables are required. The host must support PHP and permit `mail()` for direct form submission. The version query on CSS and JS URLs must be incremented after changes because the Hostinger CDN previously served an older stylesheet with a newer HTML file.
