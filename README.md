@@ -1,6 +1,6 @@
 # VERO Football Agency website — editorial preview
 
-This is a dependency-free, responsive static website. Open `index.html` to preview it locally. Sections: agency, services, genuine football gallery, approach, representation, contact. Gallery photos open in a native dialog with close and arrow navigation. Contact links open the visitor's email app with a suitable subject.
+This is a dependency-free, responsive static website. Open `index.html` to preview it locally. Sections: agency, services, genuine football gallery, approach, player/coach/club pathways, process, representation and contact. The header remains available on scroll and the mobile menu is keyboard accessible. Gallery photos open in a native dialog with close and arrow navigation. The contact form validates fields and prepares an email draft locally in the visitor's email app; the address remains visible as a fallback. No web form claims a message was sent.
 
 ## Agency website research, September 2026
 
@@ -9,13 +9,15 @@ This is a dependency-free, responsive static website. Open `index.html` to previ
 - CAA Base: explicit coverage of representation, moves, communication and life around a career. Source: https://caabase.com/base-services/
 - ROOF: bold photography and a distinct point of view with short editorial sections. Source: https://www.roof.football/
 - Unique Sports Group: direct routes to services, staff, news and contact. Source: https://www.uniquesg.com/
+- Gestifute: attentive, close career guidance and a clear agency identity. Source: https://gestifute.com/
+- Women's Football Agency: separates athlete management from marketing and project work. Source: https://womensfootballagency.com/
 
 VERO applies the useful patterns in its own voice and visual identity. The site does not borrow text, claim competitor scale, display invented numbers, or publish an unconfirmed roster.
 
 ## Content review before publishing
 
 - The supplied VERO artwork and real football photos are used on the homepage. The image gallery has no player names until the identities and a public roster have been verified. Do not generate or alter identity-defining features.
-- Confirm that `verofootballagency@gmail.com` is the right public email. The links use `mailto:`; a true inbox-backed web form would need a configured mail service or Hostinger server endpoint.
+- Confirm that `verofootballagency@gmail.com` is the right public email. The form uses `mailto:` and therefore requires a configured email app on the visitor's device; a true inbox-backed web form would need a configured mail service or Hostinger server endpoint.
 - Confirm any player names, current affiliations and permission to show them publicly before adding a named roster. Two supplied photos with visible phone UI were excluded.
 - Confirm the final copy, legal identity and privacy notice with the agency before attaching the official domain.
 - Review the design on phone and desktop, then connect the official domain when ready.

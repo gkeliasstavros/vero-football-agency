@@ -1,5 +1,9 @@
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.nav');
+const siteHeader = document.querySelector('.site-header');
+const updateHeader = () => siteHeader?.classList.toggle('is-scrolled', window.scrollY > 20);
+updateHeader();
+window.addEventListener('scroll', updateHeader, { passive: true });
 
 menuButton?.addEventListener('click', () => {
   const open = menuButton.getAttribute('aria-expanded') !== 'true';
@@ -44,4 +48,29 @@ photoDialog?.addEventListener('click', (event) => { if (event.target === photoDi
 photoDialog?.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowLeft') { event.preventDefault(); showPhoto(selectedPhoto - 1); }
   if (event.key === 'ArrowRight') { event.preventDefault(); showPhoto(selectedPhoto + 1); }
+});
+
+const enquiryForm = document.getElementById('enquiry-form');
+document.querySelectorAll('[data-audience]').forEach((link) => {
+  link.addEventListener('click', () => {
+    const role = enquiryForm?.elements.namedItem('role');
+    if (role) role.value = link.dataset.audience;
+  });
+});
+
+enquiryForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (!enquiryForm.reportValidity()) return;
+  const data = new FormData(enquiryForm);
+  const value = (key) => String(data.get(key) || '').trim();
+  const body = [
+    `Name: ${value('name')}`,
+    `Email: ${value('email')}`,
+    `I am a: ${value('role')}`,
+    value('club') ? `Club / organisation: ${value('club')}` : '',
+    '',
+    value('message'),
+  ].filter((line) => line !== null).join('\n');
+  const subject = `${value('role')} enquiry — VERO Football Agency`;
+  window.location.href = `mailto:verofootballagency@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
