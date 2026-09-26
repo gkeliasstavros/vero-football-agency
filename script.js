@@ -51,6 +51,10 @@ photoDialog?.addEventListener('keydown', (event) => {
 });
 
 const enquiryForm = document.getElementById('enquiry-form');
+const requestedRole = new URLSearchParams(window.location.search).get('role');
+if (enquiryForm && ['Player', 'Coach', 'Club', 'Other'].includes(requestedRole)) {
+  enquiryForm.elements.namedItem('role').value = requestedRole;
+}
 document.querySelectorAll('[data-audience]').forEach((link) => {
   link.addEventListener('click', () => {
     const role = enquiryForm?.elements.namedItem('role');
