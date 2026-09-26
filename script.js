@@ -62,7 +62,7 @@ document.querySelectorAll('[data-audience]').forEach((link) => {
   });
 });
 
-enquiryForm?.addEventListener('submit', (event) => {
+enquiryForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   if (!enquiryForm.reportValidity()) return;
   const data = new FormData(enquiryForm);
@@ -78,12 +78,34 @@ enquiryForm?.addEventListener('submit', (event) => {
   const prepared = document.getElementById('prepared-email');
   const emailLink = document.getElementById('open-email');
   const message = document.getElementById('prepared-message');
-  const status = document.getElementById('copy-status');
+  const copyStatus = document.getElementById('copy-status');
+  const submissionStatus = document.getElementById('submission-status');
+  const sendButton = enquiryForm.querySelector('button[type="submit"]');
   emailLink.href = `mailto:verofootballagency@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   message.value = `Subject: ${subject}\n\n${body}`;
-  status.textContent = '';
-  prepared.hidden = false;
-  prepared.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'nearest' });
+  copyStatus.textContent = '';
+  prepared.hidden = true;
+  submissionStatus.hidden = false;
+  submissionStatus.classList.remove('is-error');
+  submissionStatus.textContent = 'Sending your enquiry…';
+  sendButton.disabled = true;
+  try {
+    const response = await fetch(enquiryForm.action, {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' },
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.message || 'The mail server could not accept your enquiry.');
+    submissionStatus.textContent = 'The mail server accepted your enquiry. Delivery to VERO’s inbox still needs confirmation. If you do not hear back, email us directly at verofootballagency@gmail.com.';
+  } catch (error) {
+    submissionStatus.classList.add('is-error');
+    submissionStatus.textContent = `${error.message || 'The server could not accept your enquiry.'} Use the email option below instead.`;
+    prepared.hidden = false;
+  } finally {
+    sendButton.disabled = false;
+    submissionStatus.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'nearest' });
+  }
 });
 
 document.getElementById('copy-email')?.addEventListener('click', async () => {
