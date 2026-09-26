@@ -18,9 +18,9 @@ VERO applies the useful patterns in its own voice and visual identity. The site 
 
 - The supplied VERO artwork and real football photos are used on the homepage. The image gallery has no player names until the identities and a public roster have been verified. Do not generate or alter identity-defining features.
 - `verofootballagency@gmail.com` is the confirmed public email. Test enquiries submitted both on the temporary site and `verofootball.com` arrived in that inbox on 26 September 2026. PHP `mail()` can still accept messages that are subsequently filtered. For stronger long-term delivery, use authenticated SMTP with a configured sender mailbox.
-- VERO is operated by a company registered in Bulgaria with business correspondence address Boulevard Vitosha 63, Sofia, Bulgaria. Website enquiry correspondence is retained for one year after the last message; no analytics are used. The company's exact registered legal name has not yet been supplied and must be added to `privacy.html` before calling the controller identification complete.
+- VERO is operated by Vero Football Agency EOOD, a company registered in Bulgaria with business correspondence address Boulevard Vitosha 63, Sofia, Bulgaria. Website enquiry correspondence is retained for one year after the last message; no analytics are used.
 - Confirm any player names, current affiliations and permission to show them publicly before adding a named roster. Two supplied photos with visible phone UI were excluded.
-- Confirm final copy and the company's exact legal identity with the agency.
+- Confirm final public copy and review the privacy notice with the agency's legal adviser if needed.
 - Review the design on phone and desktop.
 
 ## Deployment verification
