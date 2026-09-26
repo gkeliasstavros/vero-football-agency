@@ -32,3 +32,7 @@ Hostinger's live page was observed with a newer HTML file and an older cached `s
 This repository is connected to Hostinger; branch `main` deploys to `public_html`. The official domain `verofootball.com` and `www.verofootball.com` both served the current site over HTTPS on 26 September 2026. If the next GitHub commit is not reflected on the site, redeploy from the Hostinger Git dashboard.
 
 No build command, Node.js server, database, or environment variables are required. The host must support PHP and permit `mail()` for direct form submission. The version query on CSS and JS URLs must be incremented after changes because the Hostinger CDN previously served an older stylesheet with a newer HTML file.
+
+## Search launch
+
+The site includes a sitemap at `/sitemap.xml`, `robots.txt`, canonical URLs for all eight content pages, organization metadata on the homepage, and a supplied VERO logo in social previews. The branded error page is marked `noindex`; its links and assets use root-relative paths so it works at a nested missing URL. The form endpoint has an `X-Robots-Tag: noindex, nofollow` header. Old draft pages indexed by search engines should return an actual 404 and will need recrawling. Verify ownership in Google Search Console, submit `https://verofootball.com/sitemap.xml`, inspect the homepage and old draft URLs, and request indexing of updated pages. Search engine indexing is not immediate or guaranteed.
