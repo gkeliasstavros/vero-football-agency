@@ -15,3 +15,33 @@ navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click
 }));
 
 document.getElementById('year').textContent = String(new Date().getFullYear());
+
+const galleryButtons = [...document.querySelectorAll('.gallery-open')];
+const photoDialog = document.querySelector('.image-dialog');
+const dialogImage = photoDialog?.querySelector('img');
+const counter = photoDialog?.querySelector('.dialog-counter');
+let selectedPhoto = 0;
+
+function showPhoto(index) {
+  if (!photoDialog || !dialogImage || !galleryButtons.length) return;
+  selectedPhoto = (index + galleryButtons.length) % galleryButtons.length;
+  const sourceImage = galleryButtons[selectedPhoto].querySelector('img');
+  dialogImage.src = sourceImage.currentSrc || sourceImage.src;
+  dialogImage.alt = sourceImage.alt;
+  counter.textContent = `${String(selectedPhoto + 1).padStart(2, '0')} / ${String(galleryButtons.length).padStart(2, '0')}`;
+}
+
+galleryButtons.forEach((button, index) => button.addEventListener('click', () => {
+  showPhoto(index);
+  photoDialog.showModal();
+  photoDialog.querySelector('.dialog-close').focus();
+}));
+
+photoDialog?.querySelector('.dialog-close')?.addEventListener('click', () => photoDialog.close());
+photoDialog?.querySelector('.dialog-prev')?.addEventListener('click', () => showPhoto(selectedPhoto - 1));
+photoDialog?.querySelector('.dialog-next')?.addEventListener('click', () => showPhoto(selectedPhoto + 1));
+photoDialog?.addEventListener('click', (event) => { if (event.target === photoDialog) photoDialog.close(); });
+photoDialog?.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') { event.preventDefault(); showPhoto(selectedPhoto - 1); }
+  if (event.key === 'ArrowRight') { event.preventDefault(); showPhoto(selectedPhoto + 1); }
+});
