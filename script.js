@@ -63,14 +63,13 @@ enquiryForm?.addEventListener('submit', (event) => {
   if (!enquiryForm.reportValidity()) return;
   const data = new FormData(enquiryForm);
   const value = (key) => String(data.get(key) || '').trim();
-  const body = [
+  const details = [
     `Name: ${value('name')}`,
     `Email: ${value('email')}`,
     `I am a: ${value('role')}`,
     value('club') ? `Club / organisation: ${value('club')}` : '',
-    '',
-    value('message'),
-  ].join('\n');
+  ].filter(Boolean).join('\n');
+  const body = `${details}\n\n${value('message')}`;
   const subject = `${value('role')} enquiry — VERO Football Agency`;
   const prepared = document.getElementById('prepared-email');
   const emailLink = document.getElementById('open-email');
