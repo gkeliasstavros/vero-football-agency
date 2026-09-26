@@ -70,7 +70,28 @@ enquiryForm?.addEventListener('submit', (event) => {
     value('club') ? `Club / organisation: ${value('club')}` : '',
     '',
     value('message'),
-  ].filter((line) => line !== null).join('\n');
+  ].join('\n');
   const subject = `${value('role')} enquiry — VERO Football Agency`;
-  window.location.href = `mailto:verofootballagency@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const prepared = document.getElementById('prepared-email');
+  const emailLink = document.getElementById('open-email');
+  const message = document.getElementById('prepared-message');
+  const status = document.getElementById('copy-status');
+  emailLink.href = `mailto:verofootballagency@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  message.value = `Subject: ${subject}\n\n${body}`;
+  status.textContent = '';
+  prepared.hidden = false;
+  prepared.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'nearest' });
+});
+
+document.getElementById('copy-email')?.addEventListener('click', async () => {
+  const message = document.getElementById('prepared-message');
+  const status = document.getElementById('copy-status');
+  try {
+    await navigator.clipboard.writeText(message.value);
+    status.textContent = 'Email details copied. Paste them into a message to the address above.';
+  } catch {
+    message.focus();
+    message.select();
+    status.textContent = 'Select and copy the highlighted text, then email it to the address above.';
+  }
 });

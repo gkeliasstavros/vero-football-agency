@@ -104,3 +104,16 @@ html{scroll-padding-top:105px}
 .form-actions p{font-size:12px;line-height:1.5;color:#c7c4be;max-width:330px;margin:0}
 @media(max-width:900px){.menu-toggle{display:flex;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;border:0;background:transparent;color:#fff;cursor:pointer}.menu-toggle span{width:25px;height:2px;background:currentColor;display:block}.nav{display:none;position:absolute;top:80px;left:0;right:0;align-items:stretch;background:#151515;padding:25px 28px 32px;flex-direction:column;gap:24px;border-top:1px solid #444}.nav.is-open{display:flex}.nav-contact{width:max-content}.audiences-head{display:block}.audiences-head>p{margin-top:30px}.audience-grid article{padding-right:20px}.audience-grid article+article{padding-left:20px}}
 @media(max-width:680px){html{scroll-padding-top:82px}.nav{top:74px;padding-inline:20px}.audiences-head h2,.method h2{font-size:clamp(65px,15vw,92px)}.audiences-head>p{font-size:14px}.audience-grid{display:block}.audience-grid article,.audience-grid article+article{min-height:0;padding:25px 0 27px;border-right:0;border-bottom:1px solid rgba(255,255,255,.25)}.audience-grid h3{margin:35px 0 14px}.audience-grid a{margin-top:20px}.method-layout{display:block}.method-steps{margin-top:48px}.enquiry-form{margin-top:70px;padding:26px 20px}.enquiry-form-head{display:block}.enquiry-form-head p{margin-top:18px}.form-grid{grid-template-columns:1fr;gap:22px}.form-actions{display:block}.form-actions button{width:100%}.form-actions p{margin-top:16px}}
+
+.prepared-email[hidden]{display:none}
+.prepared-email{margin-top:36px;padding:30px;border:1px solid #6b6862;background:#222221}
+.prepared-email h4{font:700 clamp(30px,3vw,46px)/1 'Barlow Condensed',Impact,sans-serif;margin:0 0 10px}
+.prepared-email>p{font-size:14px;line-height:1.65;color:#d3d0ca;max-width:620px}
+.prepared-email-buttons{display:flex;flex-wrap:wrap;gap:12px;margin:25px 0}
+.prepared-email-buttons a,.prepared-email-buttons button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 18px;font-size:11px;font-weight:700;letter-spacing:.09em;cursor:pointer}
+.prepared-email-buttons a{background:var(--gold);color:#111}
+.prepared-email-buttons button{border:1px solid var(--gold);background:transparent;color:var(--gold)}
+.prepared-email label{display:block;margin-top:18px}
+.prepared-email input,.prepared-email textarea{margin-top:9px}
+.prepared-email .copy-status{min-height:1.5em;margin:14px 0 0}
+@media(max-width:680px){.prepared-email{padding:20px}.prepared-email-buttons{display:grid}.prepared-email-buttons a,.prepared-email-buttons button{width:100%}}

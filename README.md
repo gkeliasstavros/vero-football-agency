@@ -1,6 +1,6 @@
-# VERO Football Agency website — editorial preview
+# VERO Football Agency website
 
-This is a dependency-free, responsive static website. Open `index.html` to preview it locally. Sections: agency, services, genuine football gallery, approach, player/coach/club pathways, process, representation and contact. The header remains available on scroll and the mobile menu is keyboard accessible. Gallery photos open in a native dialog with close and arrow navigation. The contact form validates fields and prepares an email draft locally in the visitor's email app; the address remains visible as a fallback. No web form claims a message was sent.
+This is a dependency-free, responsive static website. Open `index.html` to preview it locally. Sections: agency, services, genuine football gallery, approach, player/coach/club pathways, process, representation and contact. The header remains available on scroll and the mobile menu is keyboard accessible. Gallery photos open in a native dialog with close and arrow navigation. The contact form validates fields and prepares an email draft locally; visitors can copy the address and message if no email app is configured. No web form claims a message was sent.
 
 ## Agency website research, September 2026
 
@@ -21,6 +21,10 @@ VERO applies the useful patterns in its own voice and visual identity. The site 
 - Confirm any player names, current affiliations and permission to show them publicly before adding a named roster. Two supplied photos with visible phone UI were excluded.
 - Confirm the final copy, legal identity and privacy notice with the agency before attaching the official domain.
 - Review the design on phone and desktop, then connect the official domain when ready.
+
+## Deployment verification
+
+Hostinger's live page was observed with a newer HTML file and an older cached `styles.css`, causing a broken desktop hero. The HTML references versioned CSS and JavaScript URLs to fetch the matching assets. Increment the `v=` query string whenever either file changes and verify the live page after each deployment. The contact email is still subject to owner confirmation. No server-side email delivery exists.
 
 ## Hostinger deployment
 
