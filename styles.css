@@ -347,5 +347,7 @@ html{scroll-padding-top:105px}
 .team-method .text-link{display:inline-block;margin-top:14px}
 .team-contact{background:#111;color:#fff;padding:100px 0 110px}
 .team-contact .page-cta-layout{align-items:end}
+.team-contact h2{font:700 clamp(66px,7vw,115px)/.86 'Barlow Condensed',Impact,sans-serif;letter-spacing:-.035em;margin:0}
+.team-contact h2 span{color:var(--gold)}
 @media(max-width:1100px){.team-hero{min-height:590px;padding:165px 0 90px}.team-person{min-height:330px}}
 @media(max-width:680px){.team-hero{min-height:620px;padding:150px 0 85px}.team-hero:after{width:100%;opacity:.2;background:linear-gradient(0deg,#111 4%,rgba(17,17,17,.45)),url('./assets/football-07.jpeg') center/cover}.team-hero h1{font-size:clamp(75px,17vw,115px)}.team-hero p:last-child{font-size:15px}.team-section{padding:75px 0 85px}.team-intro{display:block;margin-bottom:45px}.team-intro h2{font-size:clamp(62px,14vw,85px)}.team-intro p{font-size:14px;margin-top:29px}.team-grid{display:block}.team-person,.team-person:nth-child(even){min-height:0;padding:32px 0 43px;border-left:0}.team-person h3{font-size:clamp(58px,15vw,78px);margin:65px 0 20px}.team-person p{font-size:14px}.team-method,.team-contact{padding:80px 0}}
