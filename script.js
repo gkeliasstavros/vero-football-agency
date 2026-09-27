@@ -9,16 +9,31 @@ menuButton?.addEventListener('click', () => {
   const open = menuButton.getAttribute('aria-expanded') !== 'true';
   menuButton.setAttribute('aria-expanded', String(open));
   menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  navigation.classList.toggle('is-open', open);
+  navigation?.classList.toggle('is-open', open);
 });
 
-navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+const closeMenu = () => {
   menuButton?.setAttribute('aria-expanded', 'false');
   menuButton?.setAttribute('aria-label', 'Open menu');
-  navigation.classList.remove('is-open');
-}));
+  navigation?.classList.remove('is-open');
+};
 
-document.getElementById('year').textContent = String(new Date().getFullYear());
+navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && menuButton?.getAttribute('aria-expanded') === 'true') {
+    closeMenu();
+    menuButton.focus();
+  }
+});
+document.addEventListener('click', (event) => {
+  if (menuButton?.getAttribute('aria-expanded') === 'true' && !siteHeader?.contains(event.target)) closeMenu();
+});
+window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
+  if (event.matches) closeMenu();
+});
+
+const year = document.getElementById('year');
+if (year) year.textContent = String(new Date().getFullYear());
 
 const galleryButtons = [...document.querySelectorAll('.gallery-open')];
 const photoDialog = document.querySelector('.image-dialog');
@@ -51,6 +66,7 @@ photoDialog?.addEventListener('keydown', (event) => {
 });
 
 const enquiryForm = document.getElementById('enquiry-form');
+let enquiryAccepted = false;
 const requestedRole = new URLSearchParams(window.location.search).get('role');
 if (enquiryForm && ['Player', 'Coach', 'Club', 'Other'].includes(requestedRole)) {
   enquiryForm.elements.namedItem('role').value = requestedRole;
@@ -64,6 +80,7 @@ document.querySelectorAll('[data-audience]').forEach((link) => {
 
 enquiryForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
+  if (enquiryAccepted) return;
   if (!enquiryForm.reportValidity()) return;
   const data = new FormData(enquiryForm);
   const value = (key) => String(data.get(key) || '').trim();
@@ -97,13 +114,14 @@ enquiryForm?.addEventListener('submit', async (event) => {
     });
     const result = await response.json();
     if (!response.ok) throw new Error(result.message || 'The mail server could not accept your enquiry.');
-    submissionStatus.textContent = 'The mail server accepted your enquiry. Delivery to VERO’s inbox still needs confirmation. If you do not hear back, email us directly at verofootballagency@gmail.com.';
+    enquiryAccepted = true;
+    submissionStatus.textContent = 'Thank you. The mail server accepted your enquiry for VERO. If you do not hear back, email verofootballagency@gmail.com directly.';
   } catch (error) {
     submissionStatus.classList.add('is-error');
     submissionStatus.textContent = `${error.message || 'The server could not accept your enquiry.'} Use the email option below instead.`;
     prepared.hidden = false;
   } finally {
-    sendButton.disabled = false;
+    sendButton.disabled = enquiryAccepted;
     submissionStatus.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'nearest' });
   }
 });
