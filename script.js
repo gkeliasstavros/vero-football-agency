@@ -1,7 +1,7 @@
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.nav');
 const siteHeader = document.querySelector('.site-header');
-const updateHeader = () => siteHeader?.classList.toggle('is-scrolled', window.scrollY > 20);
+const updateHeader = () => siteHeader?.classList.toggle('is-scrolled', document.body.classList.contains('inner-page') || window.scrollY > 20);
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
