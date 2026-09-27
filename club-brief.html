@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0d0d0d" />
+  <meta name="description" content="Send VERO Football Agency a focused women’s football player or coaching recruitment brief." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Club Brief | VERO Football Agency" />
+  <meta property="og:description" content="Send VERO Football Agency a focused women’s football player or coaching recruitment brief." />
+  <title>Club Brief | VERO Football Agency</title>
+  <link rel="canonical" href="https://verofootball.com/club-brief.html" />
+  <meta property="og:url" content="https://verofootball.com/club-brief.html" />
+  <meta property="og:image" content="https://verofootball.com/assets/vero-logo.png" />
+  <meta property="og:image:alt" content="VERO Football Agency logo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="./assets/vero-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css?v=20260927-11" />
+  <script src="./script.js?v=20260927-11" defer></script>
+</head>
+<body class="inner-page page-club-brief">
+  <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header is-scrolled" id="top">
+      <a class="wordmark brand-logo" href="/" aria-label="VERO Football Agency, home"></a>
+      <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
+      <nav class="nav" id="main-nav" aria-label="Main navigation"><a href="./agency.html">Agency</a><a href="./team.html">Team</a><a href="./services.html">Services</a><a href="./players.html">Players</a><a href="./coaches.html">Coaches</a><a href="./clubs.html">Clubs</a><a class="nav-contact" href="./contact.html">Get in touch <span aria-hidden="true">↗</span></a></nav>
+    </header>
+  <main id="main">
+    <section class="inner-hero" aria-labelledby="page-title">
+      <div class="inner-hero-image"><img src="./assets/football-04.jpeg" alt="Footballer in a red kit on the pitch" style="object-position:center" /></div>
+      <div class="shell inner-hero-content"><p class="overline">VERO / CLUB ENQUIRIES</p><h1 id="page-title">START WITH<br /><em>THE BRIEF.</em></h1><p class="inner-hero-description">Tell us the role, the timing and the environment you are building. We’ll have a more useful first conversation.</p></div>
+    </section>
+    <section class="page-section shell club-brief-section" aria-labelledby="brief-title"><div class="section-label"><span>01 / YOUR REQUEST</span><span class="thin-line"></span></div><div class="editorial-grid"><h2 id="brief-title">TELL US<br /><span>WHAT FITS.</span></h2><div class="prose"><p class="lead">A clear brief helps everyone start in the right place.</p><p>Share a player or coaching need below. Required fields are marked with an asterisk. Terms, competition level and practical considerations can be added if available.</p><p>Please send a general recruitment brief first. Avoid sharing confidential medical details or another person’s personal information.</p></div></div>
+      <form class="enquiry-form brief-form" id="enquiry-form" action="./contact.php" method="post"><input type="hidden" name="enquiry_type" value="club_brief" /><input type="hidden" name="role" value="Club" />
+        <div class="enquiry-form-head"><h3>CLUB RECRUITMENT BRIEF.</h3><p>Sent to VERO’s enquiry inbox. If the server cannot accept it, you can open or copy a prepared email.</p></div>
+        <div class="brief-form-block"><h4><span>01</span> YOUR CONTACT</h4><div class="form-grid">
+          <label>YOUR NAME *<input name="name" type="text" autocomplete="name" required minlength="2" maxlength="100" placeholder="Your name" /></label>
+          <label>WORK EMAIL *<input name="email" type="email" autocomplete="email" required maxlength="150" placeholder="you@club.com" /></label>
+          <label>CLUB / ORGANISATION *<input name="club" type="text" autocomplete="organization" required minlength="2" maxlength="120" placeholder="Club or organisation" /></label>
+          <label>YOUR TITLE / ROLE *<input name="contact_title" type="text" required minlength="2" maxlength="100" placeholder="e.g. Sporting director" /></label>
+        </div></div>
+        <div class="brief-form-block"><h4><span>02</span> THE OPPORTUNITY</h4><div class="form-grid">
+          <label>LOOKING FOR *<select name="request_type" required><option value="">Select one</option><option value="Player">Player</option><option value="Coach">Coach</option></select></label>
+          <label>POSITION / COACHING ROLE *<input name="position" type="text" required minlength="2" maxlength="120" placeholder="e.g. Defensive midfielder or head coach" /></label>
+          <label>COMPETITION / LEVEL <span>(OPTIONAL)</span><input name="competition" type="text" maxlength="120" placeholder="e.g. First division" /></label>
+          <label>CLUB LOCATION <span>(OPTIONAL)</span><input name="location" type="text" maxlength="120" placeholder="City and country" /></label>
+          <label>TARGET TIMING *<input name="timing" type="text" required minlength="2" maxlength="100" placeholder="e.g. January window or next season" /></label>
+          <label>BUDGET / PROPOSED TERMS <span>(OPTIONAL)</span><input name="terms" type="text" maxlength="250" placeholder="Range and currency, if known" /></label>
+        </div></div>
+        <div class="brief-form-block"><h4><span>03</span> THE FIT</h4><div class="form-grid">
+          <label class="form-wide">PLAYING PROFILE / COACHING REMIT *<textarea name="requirements" required minlength="20" maxlength="3000" rows="6" placeholder="Describe the role, style, experience and project. What would make this a good fit?"></textarea></label>
+          <label class="form-wide">PRACTICAL CONSIDERATIONS <span>(OPTIONAL)</span><textarea name="constraints" maxlength="600" rows="3" placeholder="e.g. Language, relocation, work authorisation or decision process."></textarea></label>
+        </div></div>
+        <label class="honeypot" aria-hidden="true">LEAVE THIS EMPTY<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+        <div class="form-actions"><button type="submit">SEND CLUB BRIEF <span aria-hidden="true">↗</span></button><p>The form reports whether the mail server accepted your message. You can also email <a href="mailto:verofootballagency@gmail.com">verofootballagency@gmail.com</a>.</p></div>
+        <p class="submission-status" id="submission-status" role="status" aria-live="polite" hidden></p>
+        <div class="prepared-email" id="prepared-email" hidden><h4>SEND BY EMAIL INSTEAD.</h4><p>If the on-site form cannot send, choose “Open email app” and press Send there. You can also copy the brief below.</p><div class="prepared-email-buttons"><a id="open-email" href="mailto:verofootballagency@gmail.com">OPEN EMAIL APP ↗</a><button type="button" id="copy-email">COPY EMAIL DETAILS</button></div><label for="prepared-address">SEND TO</label><input id="prepared-address" type="text" value="verofootballagency@gmail.com" readonly /><label for="prepared-message">SUBJECT AND MESSAGE</label><textarea id="prepared-message" readonly rows="14"></textarea><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p></div>
+      </form><p class="privacy-small">Read how VERO handles your message in our <a href="./privacy.html">privacy information</a>.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><a class="footer-brand brand-logo" href="/" aria-label="VERO Football Agency, home"></a><span>FOOTBALL AGENCY</span><span>© <span id="year">2026</span> VERO FOOTBALL AGENCY</span><div class="footer-links"><a href="./team.html">TEAM</a><a href="./privacy.html">PRIVACY</a><a href="#top">BACK TO TOP ↑</a></div></div></footer>
+</body>
+</html>

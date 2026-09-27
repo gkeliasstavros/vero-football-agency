@@ -68,7 +68,7 @@ photoDialog?.addEventListener('keydown', (event) => {
 const enquiryForm = document.getElementById('enquiry-form');
 let enquiryAccepted = false;
 const requestedRole = new URLSearchParams(window.location.search).get('role');
-if (enquiryForm && ['Player', 'Coach', 'Club', 'Other'].includes(requestedRole)) {
+if (enquiryForm && !enquiryForm.elements.namedItem('enquiry_type') && ['Player', 'Coach', 'Club', 'Other'].includes(requestedRole)) {
   enquiryForm.elements.namedItem('role').value = requestedRole;
 }
 document.querySelectorAll('[data-audience]').forEach((link) => {
@@ -84,14 +84,29 @@ enquiryForm?.addEventListener('submit', async (event) => {
   if (!enquiryForm.reportValidity()) return;
   const data = new FormData(enquiryForm);
   const value = (key) => String(data.get(key) || '').trim();
-  const details = [
+  const isClubBrief = value('enquiry_type') === 'club_brief';
+  const details = isClubBrief ? [
+    `Name: ${value('name')}`,
+    `Email: ${value('email')}`,
+    `Club / organisation: ${value('club')}`,
+    `Contact title: ${value('contact_title')}`,
+    `Request: ${value('request_type')}`,
+    `Position / coaching role: ${value('position')}`,
+    value('competition') ? `Competition / level: ${value('competition')}` : '',
+    value('location') ? `Club location: ${value('location')}` : '',
+    `Target timing: ${value('timing')}`,
+    value('terms') ? `Budget / terms: ${value('terms')}` : '',
+    `\nProfile and project requirements:\n${value('requirements')}`,
+    value('constraints') ? `\nPractical considerations:\n${value('constraints')}` : '',
+  ] : [
     `Name: ${value('name')}`,
     `Email: ${value('email')}`,
     `I am a: ${value('role')}`,
     value('club') ? `Club / organisation: ${value('club')}` : '',
-  ].filter(Boolean).join('\n');
-  const body = `${details}\n\n${value('message')}`;
-  const subject = `${value('role')} enquiry — VERO Football Agency`;
+    `\n${value('message')}`,
+  ];
+  const body = details.filter(Boolean).join('\n');
+  const subject = isClubBrief ? `Club brief — ${value('request_type')} — VERO Football Agency` : `${value('role')} enquiry — VERO Football Agency`;
   const prepared = document.getElementById('prepared-email');
   const emailLink = document.getElementById('open-email');
   const message = document.getElementById('prepared-message');
@@ -115,7 +130,7 @@ enquiryForm?.addEventListener('submit', async (event) => {
     const result = await response.json();
     if (!response.ok) throw new Error(result.message || 'The mail server could not accept your enquiry.');
     enquiryAccepted = true;
-    submissionStatus.textContent = 'Thank you. The mail server accepted your enquiry for VERO. If you do not hear back, email verofootballagency@gmail.com directly.';
+    submissionStatus.textContent = `Thank you. The mail server accepted your ${isClubBrief ? 'club brief' : 'enquiry'} for VERO. If you do not hear back, email verofootballagency@gmail.com directly.`;
   } catch (error) {
     submissionStatus.classList.add('is-error');
     submissionStatus.textContent = `${error.message || 'The server could not accept your enquiry.'} Use the email option below instead.`;
