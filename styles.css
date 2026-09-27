@@ -225,9 +225,14 @@ html{scroll-padding-top:105px}
 .profile-source span{font-size:20px;color:#947747}
 .profile-back{padding:45px 0;font-size:11px;font-weight:700;letter-spacing:.16em}
 .talent-card-photo{display:block;position:relative;aspect-ratio:4/5;margin:-28px -32px 24px;overflow:hidden;background:#171716}
-.talent-card-photo img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
-.profile-photo{margin:0;background:#171716;max-height:740px;overflow:hidden}
-.profile-photo img{display:block;width:min(100%,592px);aspect-ratio:4/5;height:auto;margin-inline:auto;object-fit:contain}
+.talent-card-photo img{display:block;position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center}
+.talent-card-photo::before,.home-talent-photo::before{content:"";position:absolute;inset:-24px;background:var(--portrait-image,none) center/cover no-repeat;filter:blur(28px) brightness(.32)}
+.talent-card-photo--grigoria,.home-talent-card:nth-child(3) .home-talent-photo,.profile-photo--grigoria{--portrait-image:url('./assets/grigoria-pouliou.jpeg')}
+.talent-card-photo--anna,.home-talent-card:nth-child(4) .home-talent-photo,.profile-photo--anna{--portrait-image:url('./assets/anna-maria-panagiotopoulou.jpeg')}
+.talent-card-photo--martin,.home-talent-card:nth-child(5) .home-talent-photo,.profile-photo--martin{--portrait-image:url('./assets/martin-masaryk.png')}
+.profile-photo{position:relative;isolation:isolate;margin:0;background:#171716;max-height:740px;overflow:hidden}
+.profile-photo::before{content:"";position:absolute;inset:-32px;background:var(--portrait-image,none) center/cover no-repeat;filter:blur(32px) brightness(.27)}
+.profile-photo img{display:block;position:relative;z-index:1;width:min(100%,592px);aspect-ratio:4/5;height:auto;margin-inline:auto;object-fit:contain}
 .profile-photo figcaption{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;overflow:hidden}
 @media(max-width:760px){.talent-section{padding:75px 0 85px}.talent-intro{display:block;margin-bottom:42px}.talent-intro h2{font-size:clamp(58px,12vw,85px)}.talent-intro p{font-size:14px;margin-top:25px}.talent-grid{grid-template-columns:1fr}.talent-card{min-height:285px;padding:24px}.talent-card-name{font-size:clamp(56px,13vw,85px)}.profile-hero{min-height:590px}.profile-hero-inner{padding:150px 0 62px}.profile-hero h1{font-size:clamp(62px,14vw,100px);margin-bottom:70px}.profile-hero-foot{display:block;font-size:9px;line-height:2}.profile-hero-foot span{display:block}.profile-layout{display:block}.profile-story{margin-top:55px}.profile-story h2{font-size:clamp(62px,13vw,85px)}.profile-story p{font-size:15px}}
 @media(max-width:760px){.talent-card-photo{margin:-24px -24px 22px}.profile-photo img{width:min(100%,416px)}}
@@ -240,7 +245,7 @@ html{scroll-padding-top:105px}
 .home-talent-card{position:relative;display:flex;flex-direction:column;background:#171716;color:#fff;min-width:0;padding:0 22px 28px;transition:background .2s}
 .home-talent-card:hover,.home-talent-card:focus-visible{background:#292720}
 .home-talent-photo{display:block;position:relative;margin:0 -22px 22px;aspect-ratio:4/5;overflow:hidden;background:#171716}
-.home-talent-photo img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
+.home-talent-photo img{display:block;position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center}
 .home-talent-meta{font-size:10px;letter-spacing:.09em;color:var(--gold);min-height:32px}
 .home-talent-name{font:700 clamp(34px,3.5vw,55px)/.9 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:-.015em;overflow-wrap:anywhere;min-height:103px;margin:12px 20px 0 0}
 .home-talent-arrow{position:absolute;right:22px;bottom:23px;font-size:22px;color:var(--gold)}
