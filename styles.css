@@ -231,8 +231,30 @@ html{scroll-padding-top:105px}
 .talent-card-photo--katrin img{object-position:50% 22%}
 .talent-card-photo--grigoria img{object-position:57% 22%}
 .talent-card-photo--anna img{object-position:76% 35%}
+.talent-card-photo--martin img{object-position:42% 22%}
+.talent-card-photo--erik img{object-position:50% 18%}
 .profile-photo{margin:0;background:#171716;max-height:740px;overflow:hidden}
 .profile-photo img{display:block;width:100%;max-height:740px;object-fit:contain}
 .profile-photo figcaption{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;overflow:hidden}
 @media(max-width:760px){.talent-section{padding:75px 0 85px}.talent-intro{display:block;margin-bottom:42px}.talent-intro h2{font-size:clamp(58px,12vw,85px)}.talent-intro p{font-size:14px;margin-top:25px}.talent-grid{grid-template-columns:1fr}.talent-card{min-height:285px;padding:24px}.talent-card-name{font-size:clamp(56px,13vw,85px)}.profile-hero{min-height:590px}.profile-hero-inner{padding:150px 0 62px}.profile-hero h1{font-size:clamp(62px,14vw,100px);margin-bottom:70px}.profile-hero-foot{display:block;font-size:9px;line-height:2}.profile-hero-foot span{display:block}.profile-layout{display:block}.profile-story{margin-top:55px}.profile-story h2{font-size:clamp(62px,13vw,85px)}.profile-story p{font-size:15px}}
 @media(max-width:760px){.talent-card-photo{height:275px;margin:-24px -24px 22px}.profile-photo img{max-height:520px}}
+.home-talent{background:#e5e2db}
+.home-talent-intro{display:flex;align-items:end;justify-content:space-between;gap:45px;margin-bottom:55px}
+.home-talent-intro h2{font:700 clamp(68px,7vw,110px)/.86 'Barlow Condensed',Impact,sans-serif;letter-spacing:-.035em;margin:0}
+.home-talent-intro h2 span{color:#a38550}
+.home-talent-intro>p{max-width:325px;margin:0 0 5px;color:#5f5d59;font-size:15px;line-height:1.7}
+.home-talent-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.home-talent-card{position:relative;display:flex;flex-direction:column;background:#171716;color:#fff;min-width:0;padding:0 22px 28px;transition:background .2s}
+.home-talent-card:hover,.home-talent-card:focus-visible{background:#292720}
+.home-talent-photo{display:block;margin:0 -22px 22px;height:260px;overflow:hidden;background:#272724}
+.home-talent-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .35s}
+.home-talent-card:hover img,.home-talent-card:focus-visible img{transform:scale(1.035)}
+.home-talent-card:nth-child(4) img{object-position:76% 35%}
+.home-talent-card:nth-child(5) img{object-position:42% 24%}
+.home-talent-card:nth-child(6) img{object-position:50% 18%}
+.home-talent-meta{font-size:10px;letter-spacing:.09em;color:var(--gold);min-height:32px}
+.home-talent-name{font:700 clamp(34px,3.5vw,55px)/.9 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:-.015em;overflow-wrap:anywhere;min-height:103px;margin:12px 20px 0 0}
+.home-talent-arrow{position:absolute;right:22px;bottom:23px;font-size:22px;color:var(--gold)}
+.home-talent-links{display:flex;justify-content:space-between;gap:25px;margin-top:42px}
+@media(max-width:900px){.home-talent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.home-talent-intro{display:block;margin-bottom:35px}.home-talent-intro h2{font-size:clamp(60px,13vw,85px)}.home-talent-intro>p{margin:28px 0 0}.home-talent-grid{grid-template-columns:1fr}.home-talent-photo{height:290px}.home-talent-name{font-size:clamp(43px,11vw,65px);min-height:80px}.home-talent-links{display:block}.home-talent-links a{display:flex;justify-content:space-between;margin-bottom:18px}}
