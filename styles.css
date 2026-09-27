@@ -253,3 +253,64 @@ html{scroll-padding-top:105px}
 .home-talent-links{display:flex;justify-content:space-between;gap:25px;margin-top:42px}
 @media(max-width:900px){.home-talent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.home-talent-intro{display:block;margin-bottom:35px}.home-talent-intro h2{font-size:clamp(60px,13vw,85px)}.home-talent-intro>p{margin:28px 0 0}.home-talent-grid{grid-template-columns:1fr}.home-talent-name{font-size:clamp(43px,11vw,65px);min-height:80px}.home-talent-links{display:block}.home-talent-links a{display:flex;justify-content:space-between;margin-bottom:18px}}
+
+/* Football CV profiles */
+.cv-page{background:#f1efe9;color:#191917}
+.cv-intro{padding-top:143px;padding-bottom:74px}
+.cv-breadcrumb{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:10px;font-weight:700;letter-spacing:.16em;color:#696762}
+.cv-breadcrumb a:hover,.cv-breadcrumb a:focus-visible{color:#957442;text-decoration:underline}
+.cv-breadcrumb span:last-child{color:#957442}
+.cv-title-row{display:flex;justify-content:space-between;align-items:end;gap:28px;border-bottom:1px solid #a9a69e;padding:42px 0 36px}
+.cv-kicker{font-size:10px;font-weight:700;letter-spacing:.2em;color:#947747;margin:0 0 22px}
+.cv-title-row h1{font:700 clamp(64px,7.8vw,122px)/.83 'Barlow Condensed',Impact,sans-serif;letter-spacing:-.025em;text-transform:uppercase;margin:0 0 22px;overflow-wrap:anywhere}
+.cv-role{font-size:15px;font-weight:600;margin:0;color:#595650}
+.cv-role span{color:#b3935b;margin:0 7px}
+.cv-enquire,.cv-contact-button{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;background:#191917;color:#fff;font-size:10px;font-weight:700;letter-spacing:.14em;padding:20px 23px;white-space:nowrap;transition:background .2s,color .2s}
+.cv-enquire:hover,.cv-enquire:focus-visible,.cv-contact-button:hover,.cv-contact-button:focus-visible{background:#c8a96b;color:#171716}
+.cv-enquire span,.cv-contact-button span{font-size:19px;line-height:.5}
+.cv-overview{display:grid;grid-template-columns:minmax(0,390px) minmax(0,1fr);gap:clamp(36px,6vw,100px);align-items:start;padding-top:45px}
+.cv-portrait{position:relative;isolation:isolate;background:#242320;margin:0;overflow:hidden;aspect-ratio:4/5}
+.cv-portrait:before{content:"";position:absolute;inset:-28px;background-image:var(--cv-image);background-position:center;background-size:cover;filter:blur(28px) brightness(.3)}
+.cv-portrait img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.cv-portrait figcaption{position:absolute;left:15px;bottom:12px;z-index:2;background:#191917df;color:#fff;padding:7px 10px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.cv-details-heading{display:flex;justify-content:space-between;gap:15px;padding-bottom:17px;border-bottom:2px solid #191917;color:#947747;font-size:10px;font-weight:700;letter-spacing:.17em}
+.cv-summary{font-size:clamp(19px,2.15vw,29px);line-height:1.38;max-width:670px;padding:30px 0 12px;margin:0}
+.cv-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:0;border-top:1px solid #cbc8bf}
+.cv-fact{padding:19px 15px 19px 0;border-bottom:1px solid #cbc8bf;min-width:0}
+.cv-fact:nth-child(odd){border-right:1px solid #cbc8bf}
+.cv-fact:nth-child(even){padding-left:25px}
+.cv-fact dt{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#927545;margin-bottom:8px}
+.cv-fact dd{font-size:16px;line-height:1.35;font-weight:600;margin:0;overflow-wrap:anywhere}
+.cv-section-nav{border-block:1px solid #c3bfb5;background:#e7e4dc}
+.cv-section-nav .shell{display:flex;gap:clamp(16px,4vw,55px);overflow-x:auto;scrollbar-width:thin}
+.cv-section-nav a{flex:none;padding:21px 0;font-size:10px;font-weight:700;letter-spacing:.15em;white-space:nowrap;border-bottom:2px solid transparent}
+.cv-section-nav a:hover,.cv-section-nav a:focus-visible{border-color:#967649;color:#967649}
+.cv-content{display:grid;grid-template-columns:minmax(220px,.7fr) minmax(0,1.3fr);gap:clamp(36px,7vw,120px);padding-block:105px 120px;scroll-margin-top:20px}
+.cv-section-heading>p:first-child{font-size:10px;font-weight:700;letter-spacing:.2em;color:#947747}
+.cv-section-heading h2,.cv-records h2,.cv-contact h2{font:700 clamp(52px,5vw,82px)/.88 'Barlow Condensed',Impact,sans-serif;margin:25px 0;letter-spacing:-.025em}
+.cv-section-heading h2 span,.cv-records h2 span{color:#a38550}
+.cv-section-heading>p:last-child,.cv-records-grid>div>p:last-child,.cv-contact p:not(.cv-kicker){font-size:14px;line-height:1.7;color:#5f5d59;max-width:330px}
+.cv-table-wrap{overflow-x:auto}
+.cv-career-table{width:100%;border-collapse:collapse;text-align:left;min-width:330px}
+.cv-career-table caption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.cv-career-table thead{background:#191917;color:#fff}
+.cv-career-table th,.cv-career-table td{padding:20px 24px;border-bottom:1px solid #c6c2b8;vertical-align:top}
+.cv-career-table thead th{font-size:10px;font-weight:700;letter-spacing:.14em}
+.cv-career-table tbody th{font-size:13px;font-weight:700;white-space:nowrap;width:32%;color:#886b3d}
+.cv-career-table td strong{display:block;font-size:17px;font-weight:700;margin-bottom:5px}
+.cv-career-table td small{font-size:12px;color:#77736b}
+.cv-records{background:#1b1b1a;color:#fff;scroll-margin-top:20px}
+.cv-records-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;padding-block:85px 95px}
+.cv-records-grid>div>p:last-child{color:#bdbab3}
+.cv-records ul{list-style:none;margin:0;padding:10px 0 0}
+.cv-records li{border-bottom:1px solid #4b4945}
+.cv-records li:first-child{border-top:1px solid #4b4945}
+.cv-records li a{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;font-size:14px}
+.cv-records li a:hover,.cv-records li a:focus-visible{color:#c8a96b}
+.cv-records li span{font-size:21px;color:#c8a96b}
+.cv-contact{display:flex;justify-content:space-between;align-items:center;gap:35px;padding-block:100px;scroll-margin-top:20px}
+.cv-contact h2{margin:10px 0 20px}
+.cv-contact p:not(.cv-kicker){max-width:600px;margin:0}
+.cv-page .profile-back{border-top:1px solid #ccc8be}
+@media(max-width:900px){.cv-intro{padding-top:125px}.cv-title-row{align-items:start;flex-direction:column}.cv-overview{grid-template-columns:minmax(0,310px) minmax(0,1fr);gap:35px}.cv-facts{grid-template-columns:1fr}.cv-fact:nth-child(odd){border-right:0}.cv-fact:nth-child(even){padding-left:0}.cv-content{gap:35px}}
+@media(max-width:680px){.cv-intro{padding-top:108px;padding-bottom:45px}.cv-title-row{padding:30px 0}.cv-title-row h1{font-size:clamp(55px,14vw,85px);line-height:.9}.cv-role{font-size:13px}.cv-enquire{width:100%;justify-content:space-between}.cv-overview{display:block;padding-top:25px}.cv-portrait{max-width:400px;margin:0 auto 37px}.cv-summary{padding:24px 0 16px;font-size:20px}.cv-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.cv-fact:nth-child(odd){border-right:1px solid #cbc8bf}.cv-fact:nth-child(even){padding-left:12px}.cv-fact dd{font-size:13px}.cv-fact dt{font-size:9px}.cv-section-nav .shell{width:calc(100% - 40px);gap:25px}.cv-content{display:block;padding-block:70px 80px}.cv-section-heading{margin-bottom:33px}.cv-section-heading h2,.cv-records h2,.cv-contact h2{font-size:58px}.cv-career-table th,.cv-career-table td{padding:16px 12px}.cv-career-table td strong{font-size:15px}.cv-records-grid{display:block;padding-block:65px 75px}.cv-records ul{margin-top:32px}.cv-contact{display:block;padding-block:70px}.cv-contact-button{width:100%;margin-top:32px}.cv-page .profile-back{padding:32px 0}}
