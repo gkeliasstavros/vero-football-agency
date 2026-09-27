@@ -82,6 +82,14 @@ enquiryForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   if (enquiryAccepted) return;
   if (!enquiryForm.reportValidity()) return;
+  const incompleteField = [...enquiryForm.querySelectorAll('input[required], select[required], textarea[required]')]
+    .find((field) => field.value.trim().length < Math.max(1, Number(field.getAttribute('minlength') || 0)));
+  if (incompleteField) {
+    incompleteField.setCustomValidity('Please enter the requested information.');
+    incompleteField.reportValidity();
+    incompleteField.addEventListener('input', () => incompleteField.setCustomValidity(''), { once: true });
+    return;
+  }
   const data = new FormData(enquiryForm);
   const value = (key) => String(data.get(key) || '').trim();
   const isClubBrief = value('enquiry_type') === 'club_brief';
