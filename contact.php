@@ -45,13 +45,24 @@ $email = trim((string)($_POST['email'] ?? ''));
 $role = trim((string)($_POST['role'] ?? ''));
 $club = trim((string)($_POST['club'] ?? ''));
 $message = trim((string)($_POST['message'] ?? ''));
+$profile = trim((string)($_POST['profile'] ?? ''));
 $enquiryType = trim((string)($_POST['enquiry_type'] ?? ''));
 $isClubBrief = $enquiryType === 'club_brief';
+$profiles = [
+    'maria-matthaiou' => 'Maria Matthaiou',
+    'katrin-kirpu' => 'Katrin Kirpu',
+    'grigoria-pouliou' => 'Grigoria Pouliou',
+    'anna-maria-panagiotopoulou' => 'Anna-Maria Panagiotopoulou',
+    'martin-masaryk' => 'Martin Masaryk',
+    'erik-flamik' => 'Erik Flámik',
+];
+$profileName = $profiles[$profile] ?? '';
 
 if (strlen($name) < 2 || strlen($name) > 100 ||
     strlen($email) > 150 || !filter_var($email, FILTER_VALIDATE_EMAIL) ||
     !in_array($role, ['Player', 'Coach', 'Club', 'Other'], true) ||
     strlen($club) > 120 || !in_array($enquiryType, ['', 'club_brief'], true) ||
+    ($profile !== '' && ($profileName === '' || $role !== 'Club' || $isClubBrief)) ||
     (!$isClubBrief && (strlen($message) < 10 || strlen($message) > 3000))) {
     respond(422, 'Please check the form fields and try again.');
 }
@@ -117,6 +128,7 @@ if ($isClubBrief) {
     $body = "New VERO website enquiry\n\n" .
         "Name: {$name}\nEmail: {$email}\nRole: {$role}\n" .
         ($club !== '' ? "Club / organisation: {$club}\n" : '') .
+        ($profileName !== '' ? "Enquiry about: {$profileName}\n" : '') .
         "\nMessage:\n{$message}\n";
 }
 
@@ -127,7 +139,7 @@ $headers = [
     'X-Mailer' => 'VERO Website',
 ];
 
-$subject = $isClubBrief ? 'VERO website club brief - ' . $requestType : 'VERO website enquiry - ' . $role;
+$subject = $isClubBrief ? 'VERO website club brief - ' . $requestType : ($profileName !== '' ? 'VERO club enquiry - =?UTF-8?B?' . base64_encode($profileName) . '?=' : 'VERO website enquiry - ' . $role);
 $accepted = @mail('verofootballagency@gmail.com', $subject, $body, $headers);
 if (!$accepted) {
     flock($handle, LOCK_UN);

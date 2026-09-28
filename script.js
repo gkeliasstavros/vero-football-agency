@@ -67,9 +67,34 @@ photoDialog?.addEventListener('keydown', (event) => {
 
 const enquiryForm = document.getElementById('enquiry-form');
 let enquiryAccepted = false;
-const requestedRole = new URLSearchParams(window.location.search).get('role');
+const enquiryParams = new URLSearchParams(window.location.search);
+const requestedRole = enquiryParams.get('role');
 if (enquiryForm && !enquiryForm.elements.namedItem('enquiry_type') && ['Player', 'Coach', 'Club', 'Other'].includes(requestedRole)) {
   enquiryForm.elements.namedItem('role').value = requestedRole;
+}
+const profileNames = {
+  'maria-matthaiou': 'Maria Matthaiou',
+  'katrin-kirpu': 'Katrin Kirpu',
+  'grigoria-pouliou': 'Grigoria Pouliou',
+  'anna-maria-panagiotopoulou': 'Anna-Maria Panagiotopoulou',
+  'martin-masaryk': 'Martin Masaryk',
+  'erik-flamik': 'Erik Flámik',
+};
+const requestedProfile = enquiryParams.get('profile');
+const profileInput = enquiryForm?.elements.namedItem('profile');
+const profileNotice = document.getElementById('profile-enquiry-context');
+if (profileInput && profileNotice && Object.hasOwn(profileNames, requestedProfile)) {
+  const roleInput = enquiryForm.elements.namedItem('role');
+  const updateProfileContext = () => {
+    const isClub = roleInput.value === 'Club';
+    profileInput.value = isClub ? requestedProfile : '';
+    profileNotice.hidden = !isClub;
+  };
+  roleInput.value = 'Club';
+  profileNotice.querySelector('[data-profile-name]').textContent = profileNames[requestedProfile];
+  profileNotice.querySelector('[data-profile-link]').href = `./${requestedProfile}.html`;
+  updateProfileContext();
+  roleInput.addEventListener('change', updateProfileContext);
 }
 document.querySelectorAll('[data-audience]').forEach((link) => {
   link.addEventListener('click', () => {
@@ -93,6 +118,7 @@ enquiryForm?.addEventListener('submit', async (event) => {
   const data = new FormData(enquiryForm);
   const value = (key) => String(data.get(key) || '').trim();
   const isClubBrief = value('enquiry_type') === 'club_brief';
+  const profileName = profileNames[value('profile')] || '';
   const details = isClubBrief ? [
     `Name: ${value('name')}`,
     `Email: ${value('email')}`,
@@ -111,10 +137,11 @@ enquiryForm?.addEventListener('submit', async (event) => {
     `Email: ${value('email')}`,
     `I am a: ${value('role')}`,
     value('club') ? `Club / organisation: ${value('club')}` : '',
+    profileName ? `Enquiry about: ${profileName}` : '',
     `\n${value('message')}`,
   ];
   const body = details.filter(Boolean).join('\n');
-  const subject = isClubBrief ? `Club brief — ${value('request_type')} — VERO Football Agency` : `${value('role')} enquiry — VERO Football Agency`;
+  const subject = isClubBrief ? `Club brief — ${value('request_type')} — VERO Football Agency` : profileName ? `Club enquiry about ${profileName} — VERO Football Agency` : `${value('role')} enquiry — VERO Football Agency`;
   const prepared = document.getElementById('prepared-email');
   const emailLink = document.getElementById('open-email');
   const message = document.getElementById('prepared-message');
