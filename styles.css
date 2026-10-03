@@ -402,3 +402,29 @@ html{scroll-padding-top:105px}
 .profile-enquiry-context a{align-self:center;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.12em;text-decoration:underline;text-underline-offset:4px}
 .profile-enquiry-context p{grid-column:1/-1;color:#d0cbc1;font-size:13px;line-height:1.6;margin:5px 0 0}
 @media(max-width:680px){.profile-enquiry-context{display:block;padding:22px 20px;margin:0 0 30px}.profile-enquiry-context strong,.profile-enquiry-context a{display:block;margin-top:12px}.profile-enquiry-context p{margin-top:18px}}
+
+/* Complete represented roster and CV supplements */
+[hidden]{display:none!important}
+.roster-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.roster-card{min-width:0;padding:22px;min-height:0}
+.roster-card .talent-card-photo{margin:-22px -22px 22px;aspect-ratio:4/5}
+.roster-card .talent-card-name{font-size:clamp(30px,3vw,48px);margin:12px 0 24px;line-height:1.05;overflow-wrap:anywhere}
+.roster-card .talent-index{min-height:34px;line-height:1.6}
+.roster-card .talent-card-bottom{margin-top:auto}
+.portrait-initials{position:relative;display:flex;width:100%;height:100%;align-items:center;justify-content:center;color:var(--gold);font:600 90px/1 'Barlow Condensed',sans-serif;background:#242320}
+.roster-filters{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:16px;align-items:end;margin:34px 0 20px}
+.roster-filters label{font-size:12px;display:grid;gap:9px;font-weight:600}
+.roster-filters input,.roster-filters select,.roster-filters button{font:inherit;color:inherit;background:transparent;border:1px solid currentColor;padding:13px;width:100%;border-radius:0;min-height:46px}
+.roster-filters select option{color:#111;background:#fff}
+.roster-filters button{cursor:pointer;font-size:12px}
+#roster-count{font-size:12px;letter-spacing:.04em;margin:20px 0}
+#roster-empty{padding:30px;border:1px solid currentColor}
+.cv-highlights{padding-left:20px;font-size:14px;line-height:1.8;margin-top:25px}
+.cv-statistics{padding:40px 0 60px;border-top:1px solid #cbc8bf}
+.cv-statistics h2{font:700 32px/1.2 'Barlow Condensed',sans-serif;margin:18px 0}
+.cv-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:30px 0}
+.cv-stats dt{font-size:12px}.cv-stats dd{font:700 48px/1.2 'Barlow Condensed',sans-serif;margin:8px 0}
+.cv-statistics p,.photo-credit{font-size:12px;line-height:1.7}
+.cv-statistics a{text-decoration:underline}
+@media(max-width:1000px){.roster-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.roster-filters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.roster-grid{grid-template-columns:1fr}.roster-card .talent-card-name{font-size:42px}.roster-filters{grid-template-columns:1fr}.cv-title-row h1{overflow-wrap:anywhere}.cv-stats{gap:10px}}

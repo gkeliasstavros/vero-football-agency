@@ -73,12 +73,39 @@ if (enquiryForm && !enquiryForm.elements.namedItem('enquiry_type') && ['Player',
   enquiryForm.elements.namedItem('role').value = requestedRole;
 }
 const profileNames = {
-  'maria-matthaiou': 'Maria Matthaiou',
-  'katrin-kirpu': 'Katrin Kirpu',
-  'grigoria-pouliou': 'Grigoria Pouliou',
-  'anna-maria-panagiotopoulou': 'Anna-Maria Panagiotopoulou',
-  'martin-masaryk': 'Martin Masaryk',
-  'erik-flamik': 'Erik Flámik',
+  "nika-radolovic": "Nika Radolović",
+  "anna-maria-panagiotopoulou": "Anna-Maria Panagiotopoulou",
+  "selja-leiwo": "Selja Leiwo",
+  "antria-efstratiou": "Antria Efstratiou",
+  "aleksandra-popovic": "Aleksandra Popović",
+  "bojana-petkova": "Bojana Petkova",
+  "marina-theodoraki": "Marina Theodoraki",
+  "griselda-tsela": "Griselda Tsela",
+  "ioanna-bataoula": "Ioanna Bataoula",
+  "antonia-briana": "Antonia Briana",
+  "konstantina-drakogiannaki": "Konstantina Drakogiannaki",
+  "georgia-michou": "Georgia Michou",
+  "kalliopi-kalokairinou": "Kalliopi Kalokairinou",
+  "katerina-roumelioti": "Katerina Roumelioti",
+  "joanna-olszewska": "Joanna Olszewska",
+  "katerina-vassilounis": "Katerina Vassilounis",
+  "konstantina-platania": "Konstantina Platania",
+  "nikoleta-pitsiou": "Nikoleta Pitsiou",
+  "despoina-rokoma": "Despoina Rokoma",
+  "sona-makulova": "Sona Makulova",
+  "maria-mavridou": "Maria Mavridou",
+  "chantal-marie-kirtzakis": "Chantal Marie Kirtzakis",
+  "aimilia-olga-daskalou": "Aimilia Olga Daskalou",
+  "asimina-chatziioannou": "Asimina Chatziioannou",
+  "anabella-vassilounis": "Anabella Vassilounis",
+  "irina-topal": "Irina Topal",
+  "valeriia-postol": "Valeriia Postol",
+  "lolita-zizyte": "Lolita Žižytė",
+  "maria-matthaiou": "Maria Matthaiou",
+  "katrin-kirpu": "Katrin Kirpu",
+  "grigoria-pouliou": "Grigoria Pouliou",
+  "martin-masaryk": "Martin Masaryk",
+  "erik-flamik": "Erik Flámik"
 };
 const requestedProfile = enquiryParams.get('profile');
 const profileInput = enquiryForm?.elements.namedItem('profile');
@@ -188,3 +215,34 @@ document.getElementById('copy-email')?.addEventListener('click', async () => {
     status.textContent = 'Select and copy the highlighted text, then email it to the address above.';
   }
 });
+
+// Search and filter the represented roster without additional tracking or network calls.
+const rosterCards = [...document.querySelectorAll('.roster-card')];
+if (rosterCards.length) {
+  const controls = document.querySelector('.roster-filters');
+  const search = document.getElementById('roster-search');
+  const position = document.getElementById('roster-position');
+  const status = document.getElementById('roster-status');
+  const normalize = (value) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const updateRoster = () => {
+    const words = normalize(search.value.trim()).split(/\s+/).filter(Boolean);
+    let count = 0;
+    for (const card of rosterCards) {
+      const matches = words.every(word => normalize(card.dataset.search).includes(word))
+        && (!position.value || card.dataset.groups.split(' ').includes(position.value))
+        && (!status.value || (card.dataset.available === 'true') === (status.value === 'free'));
+      card.hidden = !matches;
+      if (matches) count++;
+    }
+    document.getElementById('roster-count').textContent = `${count} of ${rosterCards.length} players`;
+    document.getElementById('roster-empty').hidden = count !== 0;
+  };
+  controls.hidden = false;
+  search.addEventListener('input', updateRoster);
+  position.addEventListener('change', updateRoster);
+  status.addEventListener('change', updateRoster);
+  document.getElementById('roster-reset').addEventListener('click', () => {
+    search.value = ''; position.value = ''; status.value = ''; updateRoster(); search.focus();
+  });
+  updateRoster();
+}
