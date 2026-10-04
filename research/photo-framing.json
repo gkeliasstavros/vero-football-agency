@@ -1,0 +1,278 @@
+[
+  {
+    "slug": "nika-radolovic",
+    "status": "original portrait required",
+    "photo": "assets/players/nika-radolovic.webp",
+    "window": null
+  },
+  {
+    "slug": "anna-maria-panagiotopoulou",
+    "status": "aligned",
+    "photo": "assets/anna-maria-panagiotopoulou.jpeg",
+    "window": [
+      930,
+      350,
+      520,
+      650.0
+    ]
+  },
+  {
+    "slug": "selja-leiwo",
+    "status": "aligned",
+    "photo": "assets/players/selja-leiwo.webp",
+    "window": [
+      130,
+      -20,
+      600,
+      750.0
+    ]
+  },
+  {
+    "slug": "antria-efstratiou",
+    "status": "aligned",
+    "photo": "assets/players/antria-efstratiou.webp",
+    "window": [
+      130,
+      25,
+      575,
+      718.75
+    ]
+  },
+  {
+    "slug": "aleksandra-popovic",
+    "status": "aligned",
+    "photo": "assets/players/aleksandra-popovic.webp",
+    "window": [
+      85,
+      80,
+      240,
+      300.0
+    ]
+  },
+  {
+    "slug": "bojana-petkova",
+    "status": "original portrait required",
+    "photo": "assets/players/bojana-petkova.webp",
+    "window": null
+  },
+  {
+    "slug": "marina-theodoraki",
+    "status": "aligned",
+    "photo": "assets/players/marina-theodoraki.webp",
+    "window": [
+      65,
+      -20,
+      420,
+      525.0
+    ]
+  },
+  {
+    "slug": "griselda-tsela",
+    "status": "aligned",
+    "photo": "assets/players/griselda-tsela.webp",
+    "window": [
+      130,
+      180,
+      650,
+      812.5
+    ]
+  },
+  {
+    "slug": "ioanna-bataoula",
+    "status": "aligned",
+    "photo": "assets/players/ioanna-bataoula.webp",
+    "window": [
+      265,
+      0,
+      324,
+      405.0
+    ]
+  },
+  {
+    "slug": "antonia-briana",
+    "status": "original portrait required",
+    "photo": "assets/players/antonia-briana.webp",
+    "window": null
+  },
+  {
+    "slug": "konstantina-drakogiannaki",
+    "status": "original portrait required",
+    "photo": "assets/players/konstantina-drakogiannaki.webp",
+    "window": null
+  },
+  {
+    "slug": "georgia-michou",
+    "status": "original portrait required",
+    "photo": null,
+    "window": null
+  },
+  {
+    "slug": "kalliopi-kalokairinou",
+    "status": "original portrait required",
+    "photo": "assets/players/kalliopi-kalokairinou.webp",
+    "window": null
+  },
+  {
+    "slug": "katerina-roumelioti",
+    "status": "original portrait required",
+    "photo": "assets/players/katerina-roumelioti.webp",
+    "window": null
+  },
+  {
+    "slug": "joanna-olszewska",
+    "status": "aligned",
+    "photo": "assets/players/joanna-olszewska-highres.webp",
+    "window": [
+      880,
+      125,
+      800,
+      1000.0
+    ]
+  },
+  {
+    "slug": "katerina-vassilounis",
+    "status": "aligned",
+    "photo": "assets/players/katerina-vassilounis.webp",
+    "window": [
+      70,
+      -20,
+      900,
+      1125.0
+    ]
+  },
+  {
+    "slug": "konstantina-platania",
+    "status": "aligned",
+    "photo": "assets/players/konstantina-platania-highres.webp",
+    "window": [
+      850,
+      120,
+      800,
+      1000.0
+    ]
+  },
+  {
+    "slug": "nikoleta-pitsiou",
+    "status": "original portrait required",
+    "photo": "assets/players/nikoleta-pitsiou.webp",
+    "window": null
+  },
+  {
+    "slug": "despoina-rokoma",
+    "status": "original portrait required",
+    "photo": null,
+    "window": null
+  },
+  {
+    "slug": "sona-makulova",
+    "status": "original portrait required",
+    "photo": null,
+    "window": null
+  },
+  {
+    "slug": "maria-mavridou",
+    "status": "original portrait required",
+    "photo": "assets/players/maria-mavridou.webp",
+    "window": null
+  },
+  {
+    "slug": "chantal-marie-kirtzakis",
+    "status": "aligned",
+    "photo": "assets/players/chantal-marie-kirtzakis.webp",
+    "window": [
+      365,
+      20,
+      410,
+      512.5
+    ]
+  },
+  {
+    "slug": "aimilia-olga-daskalou",
+    "status": "original portrait required",
+    "photo": "assets/players/aimilia-olga-daskalou.webp",
+    "window": null
+  },
+  {
+    "slug": "asimina-chatziioannou",
+    "status": "aligned",
+    "photo": "assets/players/asimina-chatziioannou.webp",
+    "window": [
+      215,
+      395,
+      510,
+      637.5
+    ]
+  },
+  {
+    "slug": "anabella-vassilounis",
+    "status": "original portrait required",
+    "photo": null,
+    "window": null
+  },
+  {
+    "slug": "irina-topal",
+    "status": "aligned",
+    "photo": "assets/players/irina-topal.webp",
+    "window": [
+      100,
+      0,
+      350,
+      437.5
+    ]
+  },
+  {
+    "slug": "valeriia-postol",
+    "status": "aligned",
+    "photo": "assets/players/valeriia-postol.webp",
+    "window": [
+      100,
+      0,
+      350,
+      437.5
+    ]
+  },
+  {
+    "slug": "lolita-zizyte",
+    "status": "aligned",
+    "photo": "assets/players/lolita-zizyte.webp",
+    "window": [
+      32,
+      0,
+      259.2,
+      324.0
+    ]
+  },
+  {
+    "slug": "maria-matthaiou",
+    "status": "aligned",
+    "photo": "assets/maria-matthaiou.webp",
+    "window": [
+      0,
+      0,
+      461,
+      576.25
+    ]
+  },
+  {
+    "slug": "katrin-kirpu",
+    "status": "aligned",
+    "photo": "assets/katrin-kirpu.jpeg",
+    "window": [
+      130,
+      20,
+      570,
+      712.5
+    ]
+  },
+  {
+    "slug": "grigoria-pouliou",
+    "status": "aligned",
+    "photo": "assets/grigoria-pouliou.jpeg",
+    "window": [
+      420,
+      0,
+      790,
+      987.5
+    ]
+  }
+]

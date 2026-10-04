@@ -272,3 +272,7 @@ Forward · Panathinaikos
 - https://www.pao1908.com/nea/dokimasia-sto-mosxato-gia-to-podosfairo-gynaikon/
 - https://www.soccerdonna.de/en/grigoria-pouliou/profil/spieler_39990.html
 
+
+## Portrait quality review — 4 October 2026
+
+Roster and CV photos share individually reviewed 4:5 viewport windows. Original subjects and aspect ratios are preserved. Joanna Olszewska and Konstantina Platania now use full-resolution official club originals instead of thumbnails, encoded as WebP. Thirteen profiles use a neutral placeholder until a suitable original portrait is supplied; unsuitable thumbnails, announcement banners and uncertain images are no longer displayed. Exact display decisions and windows are recorded in photo-framing.json.
