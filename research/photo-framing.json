@@ -10,7 +10,7 @@
     "status": "aligned",
     "photo": "assets/anna-maria-panagiotopoulou.jpeg",
     "window": [
-      930,
+      870,
       350,
       520,
       650.0
@@ -21,7 +21,7 @@
     "status": "aligned",
     "photo": "assets/players/selja-leiwo.webp",
     "window": [
-      130,
+      120,
       -20,
       600,
       750.0
@@ -43,8 +43,8 @@
     "status": "aligned",
     "photo": "assets/players/aleksandra-popovic.webp",
     "window": [
-      85,
-      80,
+      23,
+      75,
       240,
       300.0
     ]
@@ -60,7 +60,7 @@
     "status": "aligned",
     "photo": "assets/players/marina-theodoraki.webp",
     "window": [
-      65,
+      50,
       -20,
       420,
       525.0
@@ -71,7 +71,7 @@
     "status": "aligned",
     "photo": "assets/players/griselda-tsela.webp",
     "window": [
-      130,
+      175,
       180,
       650,
       812.5
@@ -123,7 +123,7 @@
     "status": "aligned",
     "photo": "assets/players/joanna-olszewska-highres.webp",
     "window": [
-      880,
+      840,
       125,
       800,
       1000.0
@@ -134,7 +134,7 @@
     "status": "aligned",
     "photo": "assets/players/katerina-vassilounis.webp",
     "window": [
-      70,
+      100,
       -20,
       900,
       1125.0
@@ -180,8 +180,8 @@
     "status": "aligned",
     "photo": "assets/players/chantal-marie-kirtzakis.webp",
     "window": [
-      365,
-      20,
+      260,
+      -10,
       410,
       512.5
     ]
@@ -197,8 +197,8 @@
     "status": "aligned",
     "photo": "assets/players/asimina-chatziioannou.webp",
     "window": [
-      215,
-      395,
+      165,
+      345,
       510,
       637.5
     ]
@@ -214,8 +214,8 @@
     "status": "aligned",
     "photo": "assets/players/irina-topal.webp",
     "window": [
-      100,
-      0,
+      75,
+      -10,
       350,
       437.5
     ]
@@ -225,8 +225,8 @@
     "status": "aligned",
     "photo": "assets/players/valeriia-postol.webp",
     "window": [
-      100,
-      0,
+      75,
+      -10,
       350,
       437.5
     ]
@@ -269,7 +269,7 @@
     "status": "aligned",
     "photo": "assets/grigoria-pouliou.jpeg",
     "window": [
-      420,
+      355,
       0,
       790,
       987.5
