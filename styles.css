@@ -465,3 +465,7 @@ html{scroll-padding-top:105px}
 .page-players .roster-card .aligned-portrait img,.cv-portrait.aligned-portrait img{position:absolute;inset:auto;left:var(--photo-left,0%);top:var(--photo-top,0%);width:var(--photo-width,100%);height:var(--photo-height,100%);max-width:none;object-fit:fill;transform:none}
 .aligned-portrait .portrait-initials{background:#e8e6e0;color:#a38550}
 .portrait-pending{position:absolute;bottom:20px;left:12px;right:12px;text-align:center;font:400 10px/1.5 'DM Sans',sans-serif;color:#756f63;letter-spacing:.03em}
+
+/* Restore full Players page introduction alongside the updated roster. */
+.page-players .talent-intro h2{font:700 clamp(58px,7vw,96px)/.9 'Barlow Condensed',sans-serif;letter-spacing:-.025em;margin:0}.page-players .talent-intro h2 span{color:#a38550}
+.page-players #represented{padding-top:80px}
