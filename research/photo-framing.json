@@ -101,33 +101,61 @@
   },
   {
     "slug": "antonia-briana",
-    "status": "original portrait required",
-    "photo": "assets/players/antonia-briana.webp",
-    "window": null
+    "status": "aligned",
+    "photo": "assets/players/antonia-briana-vero-portrait.webp",
+    "window": [
+      380,
+      225,
+      640,
+      800
+    ],
+    "note": "Agency-supplied announcement graphic; some background lettering remains."
   },
   {
     "slug": "konstantina-drakogiannaki",
-    "status": "original portrait required",
-    "photo": "assets/players/konstantina-drakogiannaki.webp",
-    "window": null
+    "status": "aligned",
+    "photo": "assets/players/konstantina-drakogiannaki-vero-portrait.webp",
+    "window": [
+      207,
+      4,
+      392,
+      490
+    ],
+    "note": "Agency-supplied announcement graphic; some background lettering remains."
   },
   {
     "slug": "georgia-michou",
-    "status": "original portrait required",
-    "photo": null,
-    "window": null
+    "status": "aligned",
+    "photo": "assets/players/georgia-michou-vero-portrait.webp",
+    "window": [
+      310,
+      575,
+      720,
+      900
+    ]
   },
   {
     "slug": "kalliopi-kalokairinou",
-    "status": "original portrait required",
-    "photo": "assets/players/kalliopi-kalokairinou.webp",
-    "window": null
+    "status": "aligned",
+    "photo": "assets/players/kalliopi-kalokairinou-vero-portrait.webp",
+    "window": [
+      123,
+      0,
+      376,
+      470
+    ]
   },
   {
     "slug": "katerina-roumelioti",
-    "status": "original portrait required",
-    "photo": "assets/players/katerina-roumelioti.webp",
-    "window": null
+    "status": "aligned",
+    "photo": "assets/players/katerina-roumelioti-vero-portrait.webp",
+    "window": [
+      225,
+      350,
+      650,
+      812.5
+    ],
+    "note": "Agency-supplied announcement graphic; some background lettering remains."
   },
   {
     "slug": "joanna-olszewska",
@@ -164,9 +192,14 @@
   },
   {
     "slug": "nikoleta-pitsiou",
-    "status": "original portrait required",
-    "photo": "assets/players/nikoleta-pitsiou.webp",
-    "window": null
+    "status": "aligned",
+    "photo": "assets/players/nikoleta-pitsiou-vero-portrait.webp",
+    "window": [
+      500,
+      65,
+      670,
+      837.5
+    ]
   },
   {
     "slug": "despoina-rokoma",
@@ -176,9 +209,15 @@
   },
   {
     "slug": "sona-makulova",
-    "status": "original portrait required",
-    "photo": null,
-    "window": null
+    "status": "aligned",
+    "photo": "assets/players/sona-makulova-vero-portrait.webp",
+    "window": [
+      94,
+      22,
+      218,
+      272.5
+    ],
+    "note": "Agency-supplied 386x518 image; higher-resolution original preferred."
   },
   {
     "slug": "maria-mavridou",
