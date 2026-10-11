@@ -221,9 +221,14 @@
   },
   {
     "slug": "maria-mavridou",
-    "status": "original portrait required",
-    "photo": "assets/players/maria-mavridou.webp",
-    "window": null
+    "status": "aligned",
+    "photo": "assets/players/maria-mavridou-vero-portrait.webp",
+    "window": [
+      65,
+      132,
+      264,
+      330
+    ]
   },
   {
     "slug": "chantal-marie-kirtzakis",
@@ -238,9 +243,14 @@
   },
   {
     "slug": "aimilia-olga-daskalou",
-    "status": "original portrait required",
-    "photo": "assets/players/aimilia-olga-daskalou.webp",
-    "window": null
+    "status": "aligned",
+    "photo": "assets/players/aimilia-olga-daskalou-vero-portrait.webp",
+    "window": [
+      190,
+      5,
+      650,
+      812.5
+    ]
   },
   {
     "slug": "asimina-chatziioannou",
