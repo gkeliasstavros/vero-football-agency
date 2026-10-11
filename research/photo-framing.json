@@ -1,9 +1,14 @@
 [
   {
     "slug": "nika-radolovic",
-    "status": "original portrait required",
-    "photo": "assets/players/nika-radolovic.webp",
-    "window": null
+    "status": "aligned",
+    "photo": "assets/players/nika-radolovic-vero-portrait.png",
+    "window": [
+      180,
+      55,
+      800,
+      1000
+    ]
   },
   {
     "slug": "anna-maria-panagiotopoulou",
@@ -51,9 +56,15 @@
   },
   {
     "slug": "bojana-petkova",
-    "status": "original portrait required",
-    "photo": "assets/players/bojana-petkova.webp",
-    "window": null
+    "status": "aligned",
+    "photo": "assets/players/bojana-petkova-vero-portrait.png",
+    "window": [
+      225,
+      20,
+      480,
+      600
+    ],
+    "note": "Agency-supplied announcement graphic; original portrait preferred for a clean background."
   },
   {
     "slug": "marina-theodoraki",
