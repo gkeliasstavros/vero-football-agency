@@ -1,0 +1,11 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "SPORT-NEED-001",
+      "club": "Gintra",
+      "role": "Winger",
+      "evidence_class": "CLAIM",
+      "source_evidence": "VERO Control DB staging: Sporting_Requirement_IDs"
+    }
+  ]
+}
